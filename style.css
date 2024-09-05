@@ -1,0 +1,336 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Apply Google Fonts */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Dark background for contrast */
+    padding: 20px;
+    position: sticky;
+    top: 0; /* Stick to the top of the page */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add slight shadow */
+}
+
+nav .logo h1 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #28a745; /* Green hover effect for links */
+}
+
+/* Header Section */
+header {
+    background-image: url('images/header-background.jpg'); /* Add a background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Make it larger for a dramatic effect */
+}
+
+header h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* Socials in the Header */
+nav .socials {
+    display: flex;
+    margin-left: 20px;
+}
+
+nav .socials a {
+    color: white;
+    margin-left: 15px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+nav .socials a:hover {
+    color: #28a745; /* Change color on hover */
+}
+
+@media (max-width: 768px) {
+    nav .socials {
+        margin-top: 10px;
+    }
+}
+
+/* About Me Section */
+#about-me {
+    background-color: #f9f9f9; /* Light background to contrast with the header */
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto; /* Center the content */
+}
+
+#about-me h2 {
+    font-family: 'Poppins', sans-serif; /* Use the same heading font */
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about-me p {
+    font-family: 'Roboto', sans-serif; /* Use the body font for readability */
+    font-size: 18px;
+    line-height: 1.6; /* Improve readability */
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 20px; /* Center text and add spacing */
+}
+
+#about-me p:last-child {
+    margin-bottom: 0;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-content img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover; /* Ensure the image is cropped neatly */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .about-content img {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .about-container p {
+        max-width: none; /* Allow the text to take more space on larger screens */
+    }
+}
+
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Portrait and Landscape Item Styling */
+.item {
+    position: relative;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images fill the grid area without distortion */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Specific styles for landscape and portrait images */
+.landscape {
+    grid-column: span 2; /* Landscape spans two columns */
+}
+
+.portrait {
+    grid-column: span 1; /* Portrait spans one column */
+    grid-row: span 2; /* Portrait images are taller */
+}
+
+/* Hover Effect */
+.item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for smaller screens */
+    }
+
+    .landscape, .portrait {
+        grid-column: span 1; /* Make all items span 1 column on small screens */
+        grid-row: span 1;
+    }
+}
+
+
+/* Hire Section */
+#hire {
+    background-color: #fafafa;
+    text-align: center;
+    padding: 40px;
+}
+
+.hire-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hire-button:hover {
+    background-color: #0056b3;
+}
+
+/* Contact Form */
+#contact {
+    background-color: #333;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin: 15px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+footer .socials {
+    margin-top: 20px;
+}
+
+footer .socials a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 24px; /* Size of the icons */
+    transition: color 0.3s ease;
+}
+
+footer .socials a:hover {
+    color: #28a745; /* Green color on hover to match your site's theme */
+}
+
