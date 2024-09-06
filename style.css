@@ -242,40 +242,6 @@ nav .socials a:hover {
     }
 }
 
-/* Lightbox Modal */
-.lightbox {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox-content {
-    max-width: 90%;
-    max-height: 80%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    font-size: 40px;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1001; /* Ensure the close button is above the lightbox */
-}
-
-
-
-
 /* Contact Section */
 #contact {
     background-color: #f9f9f9;
@@ -296,7 +262,23 @@ nav .socials a:hover {
     font-family: 'Poppins', sans-serif;
     font-size: 36px;
     margin-bottom: 20px;
-    color: #333;
+    color: #fff;
+}
+
+/* Contact Content */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.contact-details {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+    margin-top: 30px;
+    text-align: center; /* Align the contact details to the right */
 }
 
 /* Contact Form */
@@ -336,20 +318,33 @@ nav .socials a:hover {
     background-color: #28a745;
 }
 
-/* Contact Content */
-.contact-content {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
+/* Contact Photo Styling */
+.contact-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
-.contact-details {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #fff;
-    margin-top: 90px;
-    text-align: right; /* Align the contact details to the right */
+/* Responsive Design */
+@media (min-width: 768px) {
+    .contact-container {
+        flex-direction: row;
+    }
+
+    .contact-content {
+        margin-left: 40px;
+        text-align: left;
+    }
+
+    .contact-details {
+        margin-bottom: 0;
+    }
+
+    .contact-photo img {
+        max-width: 400px; /* Limit the width of the image on larger screens */
+    }
 }
 
 /* Media Queries */
