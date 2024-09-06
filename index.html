@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Photography Portfolio - Available for Hire</title>
+        <title>Jaysick & Co.</title>
         
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
@@ -33,26 +33,30 @@
     <!-- Header Section -->
     <header>
         <h1>Jacek J. Flores - Photographer</h1>
-        <p>Freelance Photographer | Available for Hire</p>
+        <p>Available for Hire</p>
     </header>
 
     <!-- About Me -->
     <section id="about-me">
         <div class="about-container">
             <h2>About Me</h2>
-                    
-            <p>
-                Hi, I’m Jacek Flores, a passionate 18 year old photographer who loves capturing both nature's beauty and people's stories.
-                I specialize in both landscape and portrait photography but am always open to trying new styles.
-                I'm always seeking new projects and exciting opportunities to tell stories through my lens.
-            </p>
-            <p>
-                Photography started as a hobby, but it has quickly turned into a passion. I actively search for locations or just bring the camera to capture whatever I can. 
-                Whether you're looking for a photographer for an event, portraits, or simply to collaborate, I’m open to talk.
-            </p>
-            <p>
-                "This is what I like about photographs…they're proof that once, even if just for a heartbeat, everything was perfect."" ― Jodi Picoult
-            </p>
+            <div class="about-content">
+                <img src="portraits/IMG_2586.JPEG" alt="Your Photo">      
+                <div class="about-text">  
+                    <p>
+                        Hi, I’m Jacek Flores, an 18 year old photographer who loves capturing both nature's beauty and people's stories.
+                        I specialize in both landscape and portrait photography but am always open to trying new styles.
+                        I'm always seeking new projects and exciting opportunities to tell stories through my lens.
+                    </p>
+                    <p>
+                        Photography started as a hobby, but it has quickly turned into a passion. I actively search for locations or just bring the camera to capture whatever I can. 
+                        Whether you're looking for a photographer for an event, portraits, or simply to collaborate, I’m open to talk.
+                    </p>
+                    <p>
+                        "This is what I like about photographs...they're proof that once, even if just for a heartbeat, everything was perfect." ― Jodi Picoult
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -71,7 +75,7 @@
     
             <!-- Portrait Photos -->
             <div class="item portrait">
-                <img src="images/DSC03643.JPG" alt="Portrait 1">
+                <img src="portraits/DSC03643.JPG" alt="Portrait 1">
             </div>
             <div class="item portrait">
                 <img src="images/DSC03290.JPG" alt="Portrait 2">
@@ -79,10 +83,10 @@
     
             <!-- Mixed Photos -->
             <div class="item portrait">
-                <img src="images/DSC02358.JPG" alt="Portrait 3">
+                <img src="portraits/DSC02358.JPG" alt="Portrait 3">
             </div>
             <div class="item portrait">
-                <img src="images/DSC03391.JPEG" alt="Portrait 3">
+                <img src="portraits/DSC03391.JPEG" alt="Portrait 3">
             </div>
             <div class="item landscape">
                 <img src="images/DSC02557.JPG" alt="Landscape 3">
@@ -95,28 +99,26 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>
-            Looking to capture special moments? I am available for freelance photography projects, including events, portraits, and more. 
-        </p>
-        <p>    
-            Contact me to talk!
-        </p>
-
-        <form action="https://formspree.io/f/mzzpwalo" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Contact Me</h2>
+                <form action="https://formspree.io/f/mzzpwalo" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-content">
+                <div class="contact-details">
+                    <p><strong>Email:</strong> floresjacek@gmail.com</p>
+                    <p><strong>Phone:</strong> (469) 919-6961</p>
+                    <p>Feel free to reach out to me for any questions or to discuss and schedule a meeting. I'm always open to new opportunities!</p>
+                </div>
+            </div>
+        </div>
     </section>
-
+    
     <!-- Footer -->
     <footer>
     <p>Follow me on social media:</p>
@@ -124,7 +126,42 @@
         <a href="https://instagram.com/jaysick_photography" target="_blank"><i class="fab fa-instagram"></i></a>
 
         </div>
-        <p>&copy; 2024 Jaysick & Co. All rights reserved.</p>
+        <p>&copy; 2024 // Jaysick & Co. All rights reserved.</p>
     </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get lightbox elements
+            var lightbox = document.getElementById("lightbox");
+            var lightboxImg = document.getElementById("lightbox-img");
+            var closeBtn = document.getElementsByClassName("close")[0];
+    
+            // Add event listener for each gallery item
+            var galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(function(item) {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default link behavior
+                    lightbox.style.display = "flex"; // Show the lightbox
+                    lightboxImg.src = this.href; // Set the lightbox image source to the clicked image's href
+                });
+            });
+    
+            // Close the lightbox when clicking the close button
+            closeBtn.addEventListener('click', function() {
+                lightbox.style.display = "none";
+            });
+    
+            // Close the lightbox when clicking outside the image
+            lightbox.addEventListener('click', function(event) {
+                if (event.target === lightbox) {
+                    lightbox.style.display = "none";
+                }
+            });
+        });
+    </script>
+    
+    
+
 </body>
 </html>
